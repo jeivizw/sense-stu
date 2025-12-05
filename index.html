@@ -11,7 +11,7 @@
         }
 
         body {
-            background-color: #a4c4cc; /* Fundo Laranja Suave */
+            background-color: #a4c4cc;
             margin: 0;
             padding: 0;
             display: flex;
@@ -28,7 +28,7 @@
         }
 
         .header-logo {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .header-logo h1 {
@@ -42,6 +42,7 @@
         .header-logo p {
             color: #ffffff;
             font-size: 1.2em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Adicionei sombra para ler melhor */
         }
 
         /* Grid de Cartões de Menu */
@@ -49,6 +50,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
+            margin-bottom: 40px; /* Espaço antes da imagem */
         }
 
         .menu-item {
@@ -89,9 +91,19 @@
             font-size: 0.9em;
         }
 
+        /* Classe nova para a imagem não quebrar o layout */
+        .imagem-destaque {
+            max-width: 100%;
+            height: auto;
+            width: 300px; /* Tamanho controlado */
+            display: block;
+            margin: 0 auto; /* Centraliza */
+            border-radius: 10px;
+        }
+
         footer {
-            margin-top: 50px;
-            color: #888;
+            margin-top: 30px;
+            color: #585858;
             font-size: 0.8em;
         }
     </style>
@@ -102,18 +114,27 @@
         
         <div class="header-logo">
             <h1 style="font-size: 64px;">Estudio Sense</h1>
-            <p style="font-size: 23px;">Estudio Sense - Os melhores fotografos do Brasil trabalham conosco <br>junte se nós!</p>
+            <p style="font-size: 23px;">
+                Estudio Sense - Os melhores fotógrafos do Brasil trabalham conosco <br>
+                Junte-se a nós!
+            </p>
         </div>
-<hr style="border: 0; border-top: 10px solid #5389da; margin-bottom: 50px;">
+
+        <hr style="border: 0; border-top: 10px solid #5389da; margin-bottom: 50px;">
+
         <div class="menu-grid">
-            <!-- Link para o Formulário Principal -->
             <a href="formulario.html" class="menu-item">
                 <div class="icone">📷</div>
-                <div class="titulo-card">Ficha para Fotografo</div>
-                <div class="desc-card">Preencha seu cadastro, e concorra ao trabalho dos seus sonhos.</div>
+                <div class="titulo-card">Ficha para Fotógrafo</div>
+                <div class="desc-card">Preencha seu cadastro e concorra ao trabalho dos seus sonhos.</div>
             </a>
-    </div>
-    <img src="images/cameraman.png" alt="camera">
+        </div>
 
-</body>
+        <img src="./images/cameraman.png" alt="Cameraman" class="imagem-destaque">
+
+        <footer>
+            &copy; 2024 Estudio Sense - Todos os direitos reservados.
+        </footer>
+
+    </div> </body>
 </html>
