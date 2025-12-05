@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="form.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferência - Fotografos</title>
+    <style>
+        .item-relatorio {
+            border-bottom: 1px solid #ffcc80;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .item-relatorio strong {
+            color: #0017e6;
+        }
+        .btn-voltar {
+            background-color: #ccc;
+            color: #333;
+            margin-top: 10px;
+        }
+        .btn-voltar:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Confira seus Dados</h1>
+        <h3>Antes de finalizar, verifique se está tudo certo.</h3>
+        <hr style="border: 0; border-top: 1px solid #9780ff; margin-bottom: 25px;">
+
+        <div id="lista-dados"></div>
+
+        <br>
+        <div class="row-dupla">
+            <button onclick="history.back()" class="btn-enviar btn-voltar">Voltar / Editar</button>
+            <button onclick="finalizarCadastro()" class="btn-enviar">Confirmar Matrícula</button>
+        </div>
+    </div>
+
+    <script>
+        const dados = JSON.parse(localStorage.getItem('dadosFotos'));
+
+        if (dados) {
+            const lista = document.getElementById('lista-dados');
+            
+            const criarLinha = (label, valor) => {
+                return `<div class="item-relatorio">
+                            <strong>${label}:</strong> 
+                            <span style="text-align: right; margin-left: 10px;">${valor}</span>
+                        </div>`;
+            };
+
+            lista.innerHTML = 
+                criarLinha('Nome', dados.nome) +
+                criarLinha('Email', dados.email) +
+                criarLinha('Telefone', dados.telefone) +
+                criarLinha('Nascimento', dados.nascimento) +
+                criarLinha('Experiencia', dados.exp ) +
+                criarLinha('CEP', dados.cep) +
+                criarLinha('Foto (Arquivo)', dados.foto) +
+                criarLinha('Dias de Treino', dados.dias) +
+                criarLinha('Observações', dados.obs);
+
+        } else {
+            document.getElementById('lista-dados').innerHTML = "<p>Nenhum dado encontrado.</p>";
+        }
+
+        function finalizarCadastro() {
+            localStorage.removeItem('dadosFotos');
+            window.location.href = 'enviado.html';
+        }
+    </script>
+</body>
+</html>

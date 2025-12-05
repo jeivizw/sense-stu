@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio Sense</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #a4c4cc; /* Fundo Laranja Suave */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .portal-container {
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header-logo {
+            margin-bottom: 40px;
+        }
+
+        .header-logo h1 {
+            color: #0017e6;
+            font-size: 3em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header-logo p {
+            color: #ffffff;
+            font-size: 1.2em;
+        }
+
+        /* Grid de Cartões de Menu */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 5px solid transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(230, 81, 0, 0.2);
+            border-bottom: 5px solid #0084ff;
+        }
+
+        .icone {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #0084ff;
+        }
+
+        .titulo-card {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #0084ff;
+        }
+
+        .desc-card {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        footer {
+            margin-top: 50px;
+            color: #888;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portal-container">
+        
+        <div class="header-logo">
+            <h1 style="font-size: 64px;">Estudio Sense</h1>
+            <p style="font-size: 23px;">Estudio Sense - Os melhores fotografos do Brasil trabalham conosco <br>junte se nós!</p>
+        </div>
+<hr style="border: 0; border-top: 10px solid #5389da; margin-bottom: 50px;">
+        <div class="menu-grid">
+            <!-- Link para o Formulário Principal -->
+            <a href="formulario.html" class="menu-item">
+                <div class="icone">📷</div>
+                <div class="titulo-card">Ficha para Fotografo</div>
+                <div class="desc-card">Preencha seu cadastro, e concorra ao trabalho dos seus sonhos.</div>
+            </a>
+    </div>
+    <img src="/images/cameraman.png" alt="camera">
+
+</body>
+</html>
